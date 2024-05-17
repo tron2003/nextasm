@@ -14,19 +14,16 @@ import Image from 'next/image'
 import { LuLogOut } from "react-icons/lu";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import { usePathname } from 'next/navigation';
-export default function sidebar() {
 
+export default function Sidebar() {
+    const pathname = usePathname(); // Get the current pathname
 
-    const pathname=usePathname()
-    console.log(pathname)
     return (
         <div className='text-white flex flex-col h-full max-h-full'>
             {/* Pages */}
             <div className="flex flex-row pb-4 pt-3 items-center gap-3">
                 <Image src="/noavatar.png" width="50" height="50" className='rounded-full  inline ' />
-                Tron 
-                
-
+                Tron
             </div>
             <pages className="">
                 <ul className='text-xs font-semibold'>Pages</ul>
@@ -36,11 +33,11 @@ export default function sidebar() {
                         <RiDashboardHorizontalLine className="inline " />
                         Dashboard
                     </Link>
-                    <Link href="/users" className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg'>
-                        < FaUserAstronaut className='inline' />
+                    <Link href={`${pathname}/users`} className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg'>
+                        <FaUserAstronaut className='inline' />
                         Users
                     </Link>
-                    <Link href="/products" className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg'>
+                    <Link href={`${pathname}/products`} className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg'>
                         <IoPricetagsOutline className='inline' />
                         Products
                     </Link>
@@ -91,6 +88,5 @@ export default function sidebar() {
                 </div>
             </user>
         </div>
-
     )
 }
