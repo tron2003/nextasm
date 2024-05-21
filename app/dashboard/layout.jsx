@@ -4,9 +4,9 @@ import Navbar from '../ui/dashboard/navbar/navbar.jsx';
 
 export default function page({ children }) {
   return (
-    <div className="flex flex-row h-screen  bg-sky-950">
+    <div className="flex flex-row h-screen  bg-cyan-900">
       {/* Sidebar */}
-      <div className="flex flex-col h-full bg-sky-900 w-60 p-3">
+      <div className="flex flex-col h-full bg-cyan-700 w-60 p-3">
         <Sidebar />
       </div>
       

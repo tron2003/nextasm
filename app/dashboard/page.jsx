@@ -1,9 +1,9 @@
 import React from 'react'
-import Sidebar from "./layout.jsx"
+import Dash from "@/app/ui/dashboard/dash/dash.jsx"
 export default function page() {
   return (
     <div>
-      dashboard
+      <Dash />
     </div>
 
   )

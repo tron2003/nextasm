@@ -10,11 +10,11 @@ export default function navbar() {
 
     const path = usePathname();
     return (
-        <div className='flex flex-row gap-3 h-full p-2 text-sm rounded-md bg-slate-700'>
-            <span className='ml-0 flex items-center'>{path.split('/').pop()}</span>
-            <dev className="ml-auto flex flex-row  items-center gap-2 max-w-screen-md  bg-slate-800 p-2  text-white rounded ">
-                <FaSearch className='border-0  bg-slate-800 flex ' />
-                <input placeholder='search ' type='text' className='text-sm  border-none bg-slate-800  outline-none ' ></input>
+        <div className='flex flex-row gap-3 h-full p-2 text-sm rounded-md  bg-sky-700'>
+            <span className='ml-0 text-white flex items-center'>{path.split('/').pop()}</span>
+            <dev className="ml-auto flex flex-row  items-center gap-2 max-w-screen-md border-md bg-sky-800  p-2 border-white text-white rounded-md ">
+                <FaSearch className='border-0  flex ' />
+                <input placeholder='search ' type='text' className='text-sm  border-none bg-sky-800  outline-none ' ></input>
             </dev>
             <icons className='flex flex-row gap-3 items-center text-white mr-1'>
                 <Link href="/message" className='text-white' >
