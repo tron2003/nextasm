@@ -15,9 +15,10 @@ import { LuLogOut } from "react-icons/lu";
 import { IoIosHelpCircleOutline } from "react-icons/io";
 import { usePathname } from 'next/navigation';
 
+
 export default function Sidebar() {
     const pathname = usePathname(); // Get the current pathname
-
+    // HTMLFormControlsCollection.
     return (
         <div className='text-white flex flex-col h-full max-h-full'>
             {/* Pages */}
@@ -33,11 +34,11 @@ export default function Sidebar() {
                         <RiDashboardHorizontalLine className="inline " />
                         Dashboard
                     </Link>
-                    <Link href={`${pathname}/users`} className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg'>
+                    <Link href={`/dashboard/users`} className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg'>
                         <FaUserAstronaut className='inline' />
                         Users
                     </Link>
-                    <Link href={`${pathname}/products`} className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg'>
+                    <Link href={`/dashboard/products`} className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg'>
                         <IoPricetagsOutline className='inline' />
                         Products
                     </Link>
