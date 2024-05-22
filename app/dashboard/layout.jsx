@@ -6,7 +6,7 @@ export default function page({ children }) {
   return (
     <div className="flex flex-row bg-cyan-900">
       {/* Sidebar */}
-      <div className="flex flex-colh bg-cyan-700 w-50 p-3">
+      <div className="flex flex-colh bg-cyan-700 w-80 p-3">
         <Sidebar />
       </div>
       

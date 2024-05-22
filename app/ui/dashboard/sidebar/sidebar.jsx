@@ -27,8 +27,8 @@ export default function Sidebar() {
                 Tron
             </div>
             <pages className="">
-                <ul className='text-xs font-semibold'>Pages</ul>
-                <div className='flex flex-col p-3 text-xs font-normal'>
+                <ul className='text-md font-semibold'>Pages</ul>
+                <div className='flex flex-col p-3 text-md font-normal'>
                     {/* Links for Pages */}
                     <Link href="/dashboard" className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg'>
                         <RiDashboardHorizontalLine className="inline " />
@@ -51,8 +51,8 @@ export default function Sidebar() {
 
             {/* Analytics */}
             <analytics className="">
-                <ul className='text-xs font-semibold'>Analytics</ul>
-                <div className='flex flex-col p-3 text-xs font-normal'>
+                <ul className='text-md font-semibold'>Analytics</ul>
+                <div className='flex text-md flex-col p-3  font-normal'>
                     {/* Links for Analytics */}
                     <Link href="/dashboard" className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg '>
                         <IoBriefcaseOutline className="inline " />
@@ -71,8 +71,8 @@ export default function Sidebar() {
 
             {/* User */}
             <user className="">
-                <ul className='text-xs font-semibold'>User</ul>
-                <div className='flex flex-col p-3 text-xs font-normal'>
+                <ul className='text-md font-semibold'>User</ul>
+                <div className='flex flex-col p-3 text-md font-normal'>
                     {/* Links for User */}
                     <Link href="/dashboard" className='flex gap-2 items-center hover:bg-sky-700 p-3 rounded-lg '>
                         <IoSettingsOutline className="inline " />

@@ -3,7 +3,7 @@ import React from 'react';
 import TotalUsers from './totalusers.jsx';
 import Transaction from './transaction.jsx';
 import Chart from './chart.jsx';
-
+import Rightbar from './rightbar.jsx';
 export default function Dash() {
     return (
         <div className=' flex flex-row   justify-between gap-3   '>
@@ -29,7 +29,7 @@ export default function Dash() {
             </div>
             <div className=" flex flex-col basis-1/5">
                 {/* Right bar */}
-                right bar
+               <Rightbar/>
             </div>
            
         </div>
