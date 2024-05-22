@@ -4,18 +4,18 @@ import Navbar from '../ui/dashboard/navbar/navbar.jsx';
 
 export default function page({ children }) {
   return (
-    <div className="flex flex-row h-screen  bg-cyan-900">
+    <div className="flex flex-row bg-cyan-900">
       {/* Sidebar */}
-      <div className="flex flex-col h-full bg-cyan-700 w-60 p-3">
+      <div className="flex flex-colh bg-cyan-700 w-50 p-3">
         <Sidebar />
       </div>
       
       {/* Navbar */}
-      <div className="flex-grow flex flex-col  gap-3 h-full p-4">
+      <div className="flex-grow flex flex-col  gap-3  p-4">
         <div className="">
           <Navbar />
         </div>
-        {/* Maon Component */}
+        {/* Main Component */}
         <div className="text-white">
           {children}
         </div>

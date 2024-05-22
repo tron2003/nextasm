@@ -20,7 +20,7 @@ export default function Sidebar() {
     const pathname = usePathname(); // Get the current pathname
     // HTMLFormControlsCollection.
     return (
-        <div className='text-white flex flex-col h-full max-h-full'>
+        <div className='text-white flex flex-col '>
             {/* Pages */}
             <div className="flex flex-row pb-4 pt-3 items-center gap-3">
                 <Image src="/noavatar.png" width="50" height="50" className='rounded-full  inline ' />
