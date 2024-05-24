@@ -26,7 +26,7 @@ export default function Transaction() {
           <tbody className=''>
             <tr className='bg-sky-700'>
               <th scope='row' className='flex flex-row gap-1 px-6 py-4 font-medium whitespace-nowrap justify-items-center'>
-                <Image src='/noavatar.png' className="rounded-full" width={25} height={25} alt='Product Image' />
+                <Image src='/noavatar.png' className="rounded-full" width={50} height={50} alt='Product Image' />
                 Johnny Bravo
               </th>
               <td className=' px-6 py-4 '>

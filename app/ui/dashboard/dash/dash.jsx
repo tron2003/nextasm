@@ -22,10 +22,7 @@ export default function Dash() {
                     {/* Chart */}
                     <Chart />
                 </div>
-                <div className="">
-                    lama azdasdasdas
-
-                </div>
+               
             </div>
             <div className=" flex flex-col basis-1/5">
                 {/* Right bar */}
