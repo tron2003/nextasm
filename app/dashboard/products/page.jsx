@@ -1,7 +1,8 @@
 import React from 'react'
 import Search from '@/app/ui/dashboard/dash/search.jsx'
 import Link from 'next/link'
-import { fetchProducts } from '@/app/lib/data.js'
+import { fetchProducts } from '@/app/lib/data.js'  
+
 
 const Page = async ({ searchParams }) => {
   const q = searchParams?.q || "";
