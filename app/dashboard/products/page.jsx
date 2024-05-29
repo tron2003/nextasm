@@ -52,7 +52,7 @@ const Page = async ({ searchParams }) => {
                     <Link href={`/dashboard/products/${product.id}`}>
                       <button className='text-sm font-semibold bg-red-500 text-white rounded-lg p-1'>view</button>
                     </Link>
-                    <Link href="/dashboard/users">
+                    <Link href={`/dashboard/products/${product.id}`}>
                       <button className='text-sm font-semibold bg-green-500 text-white rounded-lg p-1'>edit</button>
                     </Link>
                   </td>

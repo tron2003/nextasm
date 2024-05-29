@@ -1,5 +1,5 @@
 
-
+'use client'
 import React from 'react';
 import Search from '@/app/ui/dashboard/dash/search.jsx';
 import Link from 'next/link';
@@ -50,9 +50,10 @@ const UsersPage = async ({ searchParams }) => {
                   <td className='py-2 px-6'>{user.isadmin ? 'Admin' : 'User'}</td>
                   <td className='py-2 px-6'>{user.isactive ? 'Active' : 'Inactive'}</td>
                   <td className='py-2 px-6 flex gap-2'>
-                    <Link href={`/dashboard/products/${product.id}`} >
+                    <Link href={`/dashboard/users/${user.id}`} >
                       <button className='text-sm font-semibold bg-red-500 text-white rounded-lg p-1'>View</button>
                     </Link>
+
                     <Link href="/dashboard/users">
                       <button className='text-sm font-semibold bg-green-500 text-white rounded-lg p-1'>Edit</button>
                     </Link>

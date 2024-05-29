@@ -1,9 +1,9 @@
 import React from 'react'
-import AddUser from '@/app/ui/dashboard/dash/useradd.jsx'
+import AddUserPage from '@/app/ui/dashboard/dash/useradd.jsx'
 export default function AddUserspage() {
   return (
     <div>
-       <AddUser/>
+       <AddUserPage/>
     </div>
   )
 }
