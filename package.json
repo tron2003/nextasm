@@ -9,21 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@next/eslint-plugin-next": "^14.2.3",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.5",
     "flowbite-react": "^0.9.0",
-    "mongodb": "^6.6.2",
+    "mongodb": "^6.7.0",
     "mongoose": "^8.4.0",
-    "next": "14.2.3",
-    "react": "^18",
+    "next": "^14.2.3",
+    "next-auth": "^5.0.0-beta.3",
+    "react": "^18.3.1",
     "react-charts": "^3.0.0-beta.57",
-    "react-dom": "^18",
+    "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
     "recharts": "^2.12.7",
     "use-debounce": "^10.0.1"
   },
   "devDependencies": {
-    "eslint": "^8",
+    "eslint": "^9",
     "eslint-config-next": "14.2.3",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.3"
   }
 }

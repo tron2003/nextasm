@@ -1,4 +1,4 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 import React from 'react';
 
 export default function Transaction() {
@@ -26,7 +26,7 @@ export default function Transaction() {
           <tbody className=''>
             <tr className='bg-sky-700'>
               <th scope='row' className='flex flex-row gap-1 px-6 py-4 font-medium whitespace-nowrap justify-items-center'>
-                <Image src='/noavatar.png' className="rounded-full" width={50} height={50} alt='Product Image' />
+                <img src='/noavatar.png' alt='Product Image' className="rounded-full" width={50} height={50} />
                 Johnny Bravo
               </th>
               <td className=' px-6 py-4 '>
@@ -46,7 +46,7 @@ export default function Transaction() {
             </tr>
             <tr className='bg-sky-700'>
               <th scope='row' className='flex flex-row gap-1 px-6 py-4 font-medium whitespace-nowrap'>
-                <Image src='/noavatar.png' className="rounded-full" width={25} height={25} alt='Product Image' />
+                <img src='/noavatar.png' alt='Product Image' className="rounded-full" width={25} height={25}  />
                 Johnny Bravo
               </th>
               <td className=' px-6 py-4 '>
@@ -66,7 +66,7 @@ export default function Transaction() {
             </tr>
             <tr className='bg-sky-700'>
               <th scope='row' className='flex flex-row gap-1 px-6 py-4 font-medium whitespace-nowrap'>
-                <Image src='/noavatar.png' className="rounded-full" width={25} height={25} alt='Product Image' />
+                <img src='/noavatar.png' className="rounded-full" width={25} height={25} alt='Product Image' />
                 Johnny Bravo
               </th>
               <td className=' px-6 py-4 '>
@@ -86,7 +86,7 @@ export default function Transaction() {
             </tr>
             <tr className='bg-sky-700'>
               <th scope='row' className='flex flex-row gap-1 px-6 py-4 font-medium whitespace-nowrap'>
-                <Image src='/noavatar.png' className="rounded-full" width={25} height={25} alt='Product Image' />
+                <img src='/noavatar.png' className="rounded-full" width={25} height={25} alt='Product Image' />
                 Johnny Bravo
               </th>
               <td className=' px-6 py-4 '>
@@ -106,7 +106,7 @@ export default function Transaction() {
             </tr>
             <tr className='bg-sky-700'>
               <th scope='row' className='flex flex-row gap-1 px-6 py-4 font-medium whitespace-nowrap'>
-                <Image src='/noavatar.png' className="rounded-full" width={25} height={25} alt='Product Image' />
+                <img src='/noavatar.png' className="rounded-full" width={25} height={25} alt='Product Image' />
                 Johnny Bravo
               </th>
               <td className=' px-6 py-4 '>

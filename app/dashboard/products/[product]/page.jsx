@@ -7,7 +7,7 @@ export default function page() {
         <div className=" ">
           <div className="w-full bg-blue-900 p-3 rounded-lg flex flex-col gap-2 ">
 
-            <img src='/noavatar.png' width={450} height={450} className='rounded-md' ></img>
+            <img src='/noavatar.png' alt='product image' width={450} height={450} className='rounded-md' ></img>
             <span className='pl-1'>Helo worlds</span>
           </div>
         </div>

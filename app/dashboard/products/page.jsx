@@ -1,8 +1,9 @@
+'use client'
 import React from 'react'
 import Search from '@/app/ui/dashboard/dash/search.jsx'
 import Link from 'next/link'
 import { fetchProducts } from '@/app/lib/data.js'  
-
+import Pagination from '@/app/ui/dashboard/dash/pagination.jsx'
 
 const Page = async ({ searchParams }) => {
   const q = searchParams?.q || "";
@@ -40,7 +41,7 @@ const Page = async ({ searchParams }) => {
                 <tr key={product.id}>
                   <td className='py-2 px-6'>
                     <div className='flex flex-row gap-2'>
-                      <img src={product.img || "/noavatar.png"} width={25} height={25} className='rounded-full' />
+                      <img src={product.img} alt={"/noavatar.png"} width={25} height={25} className='rounded-full' />
                       {product.title}
                     </div>
                   </td>

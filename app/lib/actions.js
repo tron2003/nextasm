@@ -1,6 +1,6 @@
 import { revalidatePath } from "next/cache";
-import { User } from "./models";
-import { connectToDB } from "./utils";
+import { User } from "./models.js";
+import  connectToDB  from "./utils";
 import { redirect } from "next/navigation";
 
 export const addUser = async (formData) => {
@@ -20,6 +20,10 @@ export const addUser = async (formData) => {
         // Save the new user to the database
         await newUser.save();
 
+        // Revalidate path and redirect after successful user creation
+        revalidatePath("/dashboard/users");
+        redirect("/dashboard/users");
+
         // Return the newly created user
         return newUser;
     } catch (error) {
@@ -27,6 +31,4 @@ export const addUser = async (formData) => {
         console.error("Error creating user:", error);
         throw new Error("Failed to create user");
     }
-    revalidatePath("/dashboard/users")
-    redirect("/dashboard/users")
 };

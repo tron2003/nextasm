@@ -1,13 +1,10 @@
-'use client'
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/router';
+import { usePathname, useSearchParams, useRouter } from 'next/navigation'; // Import useRouter
 import React from 'react';
-import Link from 'next/link'; // Import Link from 'next/link'
+import Link from 'next/link';
 
-export default function Pagination() { // Corrected function name to start with uppercase
-
+export default function Pagination() {
     const searchParams = useSearchParams();
-    const { replace } = useRouter();
+    const router = useRouter(); // Use useRouter hook
     const pathname = usePathname();
     const page = searchParams.get("page") || 1;
     const params = new URLSearchParams(searchParams);
@@ -15,13 +12,14 @@ export default function Pagination() { // Corrected function name to start with 
     const ITEM_PER_PAGE = 2;
     const hasPrev = ITEM_PER_PAGE * (parseInt(page) - 1) > 0;
     const hasNext = ITEM_PER_PAGE * (parseInt(page) - 1) + ITEM_PER_PAGE < 6;
+
     const handleChangePage = (type) => {
         if (type === "prev") {
             params.set("page", parseInt(page) - 1);
         } else if (type === "next") {
             params.set("page", parseInt(page) + 1);
         }
-        replace(`${pathname}?${params.toString()}`);
+        router.replace(`${pathname}?${params.toString()}`);
     };
 
     return (
