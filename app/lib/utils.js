@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const connection = {}; // Use this object to track the connection state
 
- const connectToDB = async () => {
+ export const connectToDB = async () => {
     try {
         if (connection.isConnected) {
             return; // If already connected, do nothing
@@ -15,4 +15,3 @@ const connection = {}; // Use this object to track the connection state
         throw new Error(error);
     }
 };
-export default connectToDB

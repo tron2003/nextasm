@@ -1,5 +1,6 @@
+'use server'
 import { Product, User } from "./models.js";
-import  connectToDB  from "./utils.js";
+import {connectToDB } from "./utils.js";
 
 export const fetchUsers = async (q, page) => {
     const regex = new RegExp(q, "i");

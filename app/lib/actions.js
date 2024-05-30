@@ -1,34 +1,38 @@
+"use server";
+
 import { revalidatePath } from "next/cache";
-import { User } from "./models.js";
-import  connectToDB  from "./utils";
+import { Product, User } from "./models";
+import {connectToDB}  from "./utils";
 import { redirect } from "next/navigation";
+import bcrypt from "bcrypt";
+// import { signIn } from "../auth";
 
 export const addUser = async (formData) => {
+    const { username, email, password, phone, address, isAdmin, isActive } =
+        Object.fromEntries(formData);
+
     try {
-        // Convert formData to a plain object
-        const data = Object.fromEntries(formData.entries());
-
-        // Destructure data object for user creation
-        const { username, email, password, phone, address, isAdmin, isActive } = data;
-
-        // Connect to the database
         await connectToDB();
 
-        // Create a new user instance
-        const newUser = new User({ username, email, password, phone, address, isAdmin, isActive });
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt);
 
-        // Save the new user to the database
+        const newUser = new User({
+            username,
+            email,
+            password: hashedPassword,
+            phone,
+            address,
+            isAdmin,
+            isActive,
+        });
+
         await newUser.save();
-
-        // Revalidate path and redirect after successful user creation
-        revalidatePath("/dashboard/users");
-        redirect("/dashboard/users");
-
-        // Return the newly created user
-        return newUser;
-    } catch (error) {
-        // Handle any errors that occur during user creation
-        console.error("Error creating user:", error);
-        throw new Error("Failed to create user");
+    } catch (err) {
+        console.log(err);
+        throw new Error("Failed to create user!");
     }
+
+    revalidatePath("/dashboard/users");
+    redirect("/dashboard/users");
 };
