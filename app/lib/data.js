@@ -1,63 +1,58 @@
-'use server'
-import { Product, User } from "./models.js";
-import {connectToDB } from "./utils.js";
+// import { User, Product } from './models.js';
+// import { connectToDB } from './utils.js';
+
+// const ITEMS_PER_PAGE = 2;
+
+import { User, Product } from './models.js'; // Ensure the path is correct
+import { connectToDB } from './utils.js';
+
+const ITEM_PER_PAGE = 2;
 
 export const fetchUsers = async (q, page) => {
-    const regex = new RegExp(q, "i");
-
-    const ITEM_PER_PAGE = 2;
+    const parsedPage = Math.max(parseInt(page, 10), 1); // Ensure page is at least 1
+    const query = q ? { username: { $regex: q, $options: 'i' } } : {}; // Use query if provided
 
     try {
-        connectToDB();
-        const count = await User.find({ username: { $regex: regex } }).count();
-        const users = await User.find({ username: { $regex: regex } })
+        await connectToDB();
+        const count = await User.countDocuments(query);
+        const users = await User.find(query)
             .limit(ITEM_PER_PAGE)
-            .skip(ITEM_PER_PAGE * (page - 1));
+            .skip(ITEM_PER_PAGE * (parsedPage - 1));
         return { count, users };
     } catch (err) {
-        console.log(err);
+        console.error("Error fetching users:", err);
         throw new Error("Failed to fetch users!");
     }
 };
 
 export const fetchUser = async (id) => {
-    console.log(id);
     try {
-        connectToDB();
+        await connectToDB();
         const user = await User.findById(id);
+        if (!user) {
+            throw new Error('User not found');
+        }
         return user;
     } catch (err) {
-        console.log(err);
+        console.error("Error fetching user:", err);
         throw new Error("Failed to fetch user!");
     }
 };
 
-export const fetchProducts = async (q, page) => {
-    console.log(q);
-    const regex = new RegExp(q, "i");
-
-    const ITEM_PER_PAGE = 2;
-
-    try {
-        connectToDB();
-        const count = await Product.find({ title: { $regex: regex } }).count();
-        const products = await Product.find({ title: { $regex: regex } })
-            .limit(ITEM_PER_PAGE)
-            .skip(ITEM_PER_PAGE * (page - 1));
-        return { count, products };
-    } catch (err) {
-        console.log(err);
-        throw new Error("Failed to fetch products!");
-    }
+export const fetchProducts = async (q = '', page = 1) => {
+    return fetchDocuments(Product, q, page);
 };
 
 export const fetchProduct = async (id) => {
     try {
-        connectToDB();
+        await connectToDB();
         const product = await Product.findById(id);
+        if (!product) {
+            throw new Error('Product not found');
+        }
         return product;
     } catch (err) {
-        console.log(err);
+        console.error("Error fetching product:", err);
         throw new Error("Failed to fetch product!");
     }
 };

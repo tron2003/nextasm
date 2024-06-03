@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema(
     {
@@ -6,8 +6,6 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
             unique: true,
-            min: 3,
-            max: 20,
         },
         email: {
             type: String,
@@ -38,6 +36,14 @@ const userSchema = new mongoose.Schema(
     },
     { timestamps: true }
 );
+
+// Add a virtual property 'id' to userSchema
+userSchema.virtual('id').get(function () {
+    return this._id.toHexString();
+});
+userSchema.set('toJSON', {
+    virtuals: true
+});
 
 const productSchema = new mongoose.Schema(
     {
@@ -73,6 +79,13 @@ const productSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-export const User = mongoose.models.User || mongoose.model("User", userSchema);
-export const Product =
-    mongoose.models.Product || mongoose.model("Product", productSchema);
+// Add a virtual property 'id' to productSchema
+productSchema.virtual('id').get(function () {
+    return this._id.toHexString();
+});
+productSchema.set('toJSON', {
+    virtuals: true
+});
+
+export const User = mongoose.models.User || mongoose.model('User', userSchema);
+export const Product = mongoose.models.Product || mongoose.model('Product', productSchema);
